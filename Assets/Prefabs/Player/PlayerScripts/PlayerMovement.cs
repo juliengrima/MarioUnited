@@ -18,7 +18,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float _jumpForce;
 
     //[SerializeField] LayerMask _ground;
-    bool _isGrounded;
+    //bool _isGrounded;
+    bool _isButtonPressed;
     #endregion
     #region Instances
     private void Reset()
@@ -58,33 +59,33 @@ public class PlayerMovement : MonoBehaviour
     }
     void Jump()
     {
-        bool isButtonPressed;
-        isButtonPressed = _jump.action.WasPressedThisFrame();
-        if (_isGrounded)  
-        {
+       
+        _isButtonPressed = _jump.action.WasPressedThisFrame();
+        //if (_isGrounded)  
+        //{
             //Debug.Log("IS PRESSED");
-            if (isButtonPressed)
+            if (_isButtonPressed)
             {
                 _rb.AddForce(Vector2.up * _jumpForce);
             }
-        }
+        //}
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            _isGrounded = true;
-            //Debug.Log("IT'S GROUNDED");
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            _isGrounded = false;
-            //Debug.Log("IT'S NOT GROUNDED");
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Ground")
+    //    {
+    //        _isGrounded = true;
+    //        //Debug.Log("IT'S GROUNDED");
+    //    }
+    //}
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Ground")
+    //    {
+    //        _isGrounded = false;
+    //        //Debug.Log("IT'S NOT GROUNDED");
+    //    }
+    //}
 
     void FixedUpdate ()
     {
