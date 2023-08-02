@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
 
 public class GroundChecker : MonoBehaviour
 {
     #region Champs
     [SerializeField] bool _isGrounded;
+    [SerializeField] int _isGroundedNumber;
     [SerializeField] UnityEvent _effect;
 
     public bool IsGrounded { get => _isGrounded; }
@@ -19,8 +19,12 @@ public class GroundChecker : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
+            if (_isGrounded == false && Time.time > 1f)
+            {
+                _effect.Invoke();
+            }
             _isGrounded = true;
-            _effect.Invoke();
+            _isGroundedNumber++;
             //Debug.Log("IT'S GROUNDED");
         }
     }
@@ -28,7 +32,11 @@ public class GroundChecker : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            _isGrounded = false;
+            _isGroundedNumber--;
+            if (_isGroundedNumber <= 0)
+            {
+                _isGrounded = false;
+            }  
             //Debug.Log("IT'S NOT GROUNDED");
         }
     }
