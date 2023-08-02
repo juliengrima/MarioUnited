@@ -9,14 +9,23 @@ public class PlayerMovement : MonoBehaviour
     [Header("Objects")]
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] InputActionReference _move;
+    [SerializeField] InputActionReference _jump;
+
+    [Header("Animations")]
 
     [Header("Fields")]
     [SerializeField] float _speed;
-    [SerializeField] LayerMask _groundMask;
+    [SerializeField] float _jumpForce;
+
+    //[SerializeField] LayerMask _ground;
     bool _isGrounded;
-    int _jump;
     #endregion
     #region Instances
+    private void Reset()
+    {
+        _speed = 5f;
+        _jumpForce = 10f;
+    }
     public static PlayerMovement Instance
     {
         get; private set;
@@ -36,44 +45,44 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Jump();
         HoreizontalMouvements();
-
+        Jump();
+        //Debug.Log($"Valeur de _isGrounded : {_isGrounded}");
     }
     #endregion
     #region Methods
     void HoreizontalMouvements()
     {
-        Vector2 direction = _move.action.ReadValue<Vector2>();
-        _rb.velocity = direction * _speed;
+        float xAxis = _move.action.ReadValue<Vector2>().x * _speed;
+        _rb.velocity = new Vector2(xAxis , _rb.velocity.y);
     }
     void Jump()
     {
-        if (_isGrounded)
+        bool isButtonPressed;
+        isButtonPressed = _jump.action.WasPressedThisFrame();
+        if (_isGrounded)  
         {
-            if (Input.GetButtonDown("Space"))
+            //Debug.Log("IS PRESSED");
+            if (isButtonPressed)
             {
-                _rb.AddForce(Vector2.up * _jump);
+                _rb.AddForce(Vector2.up * _jumpForce);
             }
         }
-
     }
-
-    void OnCollisionEnter(Collision ground)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (ground.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             _isGrounded = true;
-            Debug.Log("IT'S GROUNDED");
+            //Debug.Log("IT'S GROUNDED");
         }
     }
-
-    void OnCollisionExit(Collision ground)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        if (ground.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             _isGrounded = false;
-            Debug.Log("IT'S NOT GROUNDED");
+            //Debug.Log("IT'S NOT GROUNDED");
         }
     }
 

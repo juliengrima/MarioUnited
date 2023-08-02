@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2772948771194381131}
   - component: {fileID: 1866972518816345093}
   - component: {fileID: 7887357099450274356}
-  m_Layer: 0
+  - component: {fileID: 8596109054415371662}
+  m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,7 +51,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -107,7 +108,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 2772948771194381131}
   _move: {fileID: 4748466855045646020, guid: c51616209d9b44574b68faa872d381da, type: 3}
+  _jump: {fileID: 5049950431978781466, guid: c51616209d9b44574b68faa872d381da, type: 3}
   _speed: 5
+  _jumpForce: 150
+--- !u!95 &8596109054415371662
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141272926144422789}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 289c90411c23242838d4419df2f3dc26, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &520266245565213730
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7182740732930584424}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Physics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,8 +174,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1798987301050596017}
   - component: {fileID: 4672051006876040583}
-  m_Layer: 0
-  m_Name: dwarf_back_hand
+  m_Layer: 10
+  m_Name: dwarf_Hand_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,7 +258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5077780159720341230}
   - component: {fileID: 6246177488799113373}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CorpsCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,8 +325,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4127388134154376130}
   - component: {fileID: 2007473545989862430}
-  m_Layer: 0
-  m_Name: dwarf_foot (1)
+  m_Layer: 10
+  m_Name: dwarf_foot_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -385,7 +409,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1140930199717664640}
   - component: {fileID: 6406988946563499428}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: dwarf_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,8 +493,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8782269351022162134}
   - component: {fileID: 4668694295053433943}
-  m_Layer: 0
-  m_Name: dwarf_front_hand
+  m_Layer: 10
+  m_Name: dwarf_hand_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -553,7 +577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 589986723648094224}
   - component: {fileID: 5220305704922091994}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: dwarf_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -567,14 +591,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6237610138035525964}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.025723733, w: 0.9996691}
   m_LocalPosition: {x: 0, y: 1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6024624844632589929}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.948}
 --- !u!212 &5220305704922091994
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -637,8 +661,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6864132693861927608}
   - component: {fileID: 720529743566705347}
-  m_Layer: 0
-  m_Name: dwarf_foot
+  m_Layer: 10
+  m_Name: dwarf_foot_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -720,7 +744,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6024624844632589929}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,12 +763,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1798987301050596017}
+  - {fileID: 589986723648094224}
   - {fileID: 1140930199717664640}
+  - {fileID: 1798987301050596017}
+  - {fileID: 8782269351022162134}
   - {fileID: 6864132693861927608}
   - {fileID: 4127388134154376130}
-  - {fileID: 589986723648094224}
-  - {fileID: 8782269351022162134}
   m_Father: {fileID: 5252578968862565637}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
