@@ -18,8 +18,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float _jumpForce;
 
     //[SerializeField] LayerMask _ground;
-    //bool _isGrounded;
     bool _isButtonPressed;
+    bool isGrounded;
     #endregion
     #region Instances
     private void Reset()
@@ -40,12 +40,13 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
-        
+        //isGrounded = gameObject.GetComponentInChildren<GroundChecker>().IsGrounded;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         HoreizontalMouvements();
         Jump();
         //Debug.Log($"Valeur de _isGrounded : {_isGrounded}");
@@ -59,34 +60,17 @@ public class PlayerMovement : MonoBehaviour
     }
     void Jump()
     {
-       
         _isButtonPressed = _jump.action.WasPressedThisFrame();
-        //if (_isGrounded)  
-        //{
+        isGrounded = gameObject.GetComponentInChildren<GroundChecker>().IsGrounded;
+        if (isGrounded)
+        {
             //Debug.Log("IS PRESSED");
             if (_isButtonPressed)
             {
                 _rb.AddForce(Vector2.up * _jumpForce);
             }
-        //}
+        }
     }
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Ground")
-    //    {
-    //        _isGrounded = true;
-    //        //Debug.Log("IT'S GROUNDED");
-    //    }
-    //}
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Ground")
-    //    {
-    //        _isGrounded = false;
-    //        //Debug.Log("IT'S NOT GROUNDED");
-    //    }
-    //}
-
     void FixedUpdate ()
     {
         
