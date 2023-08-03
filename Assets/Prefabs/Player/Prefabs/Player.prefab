@@ -126,7 +126,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _animator: {fileID: 8596109054415371662}
-  _speed: 5
+  graphics: {fileID: 8535720270507021276}
+  _speed: 10
   _jumpForce: 500
 --- !u!95 &8596109054415371662
 Animator:
@@ -498,7 +499,7 @@ GameObject:
   - component: {fileID: 4672051006876040583}
   m_Layer: 10
   m_Name: dwarf_Hand_Left
-  m_TagString: Untagged
+  m_TagString: PlayerRenderer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -649,7 +650,7 @@ GameObject:
   - component: {fileID: 2007473545989862430}
   m_Layer: 10
   m_Name: dwarf_foot_Right
-  m_TagString: Untagged
+  m_TagString: PlayerRenderer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -733,7 +734,7 @@ GameObject:
   - component: {fileID: 6406988946563499428}
   m_Layer: 10
   m_Name: dwarf_body
-  m_TagString: Untagged
+  m_TagString: PlayerRenderer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -817,7 +818,7 @@ GameObject:
   - component: {fileID: 4668694295053433943}
   m_Layer: 10
   m_Name: dwarf_hand_Right
-  m_TagString: Untagged
+  m_TagString: PlayerRenderer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -901,7 +902,7 @@ GameObject:
   - component: {fileID: 5220305704922091994}
   m_Layer: 10
   m_Name: dwarf_head
-  m_TagString: Untagged
+  m_TagString: PlayerRenderer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1145,7 +1146,7 @@ GameObject:
   - component: {fileID: 720529743566705347}
   m_Layer: 10
   m_Name: dwarf_foot_Left
-  m_TagString: Untagged
+  m_TagString: PlayerRenderer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

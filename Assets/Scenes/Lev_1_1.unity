@@ -470,11 +470,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &590201231 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8535720270507021276, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-  m_PrefabInstance: {fileID: 8778093060718271747}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,11 +743,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1868747187 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 589986723648094224, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-  m_PrefabInstance: {fileID: 8778093060718271747}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2005653327
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,26 +893,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3132863944719133103, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-      propertyPath: m_TagString
-      value: PlayerRenderer
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181707405557508489, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-      propertyPath: m_TagString
-      value: PlayerRenderer
-      objectReference: {fileID: 0}
-    - target: {fileID: 4558930724616236221, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-      propertyPath: m_TagString
-      value: PlayerRenderer
-      objectReference: {fileID: 0}
-    - target: {fileID: 4672051006876040583, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5220305704922091994, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5252578968862565637, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -967,50 +937,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5802229929614237217, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-      propertyPath: m_TagString
-      value: PlayerRenderer
-      objectReference: {fileID: 0}
-    - target: {fileID: 6024624844632589929, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6024624844632589929, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6024624844632589929, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6024624844632589929, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6024624844632589929, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6237610138035525964, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-      propertyPath: m_TagString
-      value: PlayerRenderer
-      objectReference: {fileID: 0}
-    - target: {fileID: 6406988946563499428, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7754023186143185445, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-      propertyPath: m_TagString
-      value: PlayerRenderer
-      objectReference: {fileID: 0}
     - target: {fileID: 7887357099450274356, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-      propertyPath: sprites
-      value: 
-      objectReference: {fileID: 1868747187}
-    - target: {fileID: 7887357099450274356, guid: c552fb474ac384cbeb20e33ba6afaff4, type: 3}
-      propertyPath: graphics
-      value: 
-      objectReference: {fileID: 590201231}
+      propertyPath: _speed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

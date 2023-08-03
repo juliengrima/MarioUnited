@@ -45,11 +45,7 @@ public class PlayerMovement : MonoBehaviour
         
     }
     void Start()
-    {
-        if (_animator == null)
-        {
-            Debug.Log("Il Manque l'Animator");
-        }
+    {  
 
     }
 
