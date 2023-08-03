@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] InputActionReference _jump;
     [SerializeField] UnityEvent _sound;
     [SerializeField] Animator _animator;
+    [SerializeField] GameObject graphics;
 
     //[SerializeField] GroundChecker _isGrounded;
 
@@ -67,6 +68,13 @@ public class PlayerMovement : MonoBehaviour
         float xAxis = _move.action.ReadValue<Vector2>().x * _speed;
         _rb.velocity = new Vector2(xAxis , _rb.velocity.y);
         _animator.SetFloat("Speed", Mathf.Abs(xAxis));
+        Debug.Log($"Definition de l'axe de déplacement : {xAxis}");
+
+        if (xAxis < 0)
+        {
+            float sprites = graphics.transform.rotation.y;
+            sprites = 180f;
+        }
     }
     void Jump()
     {
