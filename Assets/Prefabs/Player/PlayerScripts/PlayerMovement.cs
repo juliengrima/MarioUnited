@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
@@ -10,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] InputActionReference _move;
     [SerializeField] InputActionReference _jump;
+    [SerializeField] UnityEvent _sound;
+    [SerializeField] Animator _animator;
+
     //[SerializeField] GroundChecker _isGrounded;
 
     [Header("Animations")]
@@ -41,7 +45,11 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
-        //isGrounded = gameObject.GetComponentInChildren<GroundChecker>().IsGrounded;
+        if (_animator == null)
+        {
+            Debug.Log("Il Manque l'Animator");
+        }
+
     }
 
     // Update is called once per frame
@@ -58,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float xAxis = _move.action.ReadValue<Vector2>().x * _speed;
         _rb.velocity = new Vector2(xAxis , _rb.velocity.y);
+        _animator.SetFloat("Speed", Mathf.Abs(xAxis));
     }
     void Jump()
     {
@@ -69,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
             if (_isButtonPressed)
             {
                 _rb.AddForce(Vector2.up * _jumpForce);
+                _sound.Invoke();
             }
         }
     }
