@@ -16,7 +16,7 @@ public class GroundChecker : MonoBehaviour
     #region Unity LifeCycle
     private void Start()
     {
-        _sound.Invoke();
+       
     }
     #endregion
     #region Methods
@@ -27,6 +27,7 @@ public class GroundChecker : MonoBehaviour
             if (_isGrounded == false && Time.time > 1f)
             {
                 _effect.Invoke();
+                _sound.Invoke();
             }
             _isGrounded = true;
             _isGroundedNumber++;

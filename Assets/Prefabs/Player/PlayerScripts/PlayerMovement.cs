@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] InputActionReference _move;
     [SerializeField] InputActionReference _jump;
+    //[SerializeField] GroundChecker _isGrounded;
 
     [Header("Animations")]
 

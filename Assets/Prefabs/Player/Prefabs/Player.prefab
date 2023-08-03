@@ -109,6 +109,7 @@ MonoBehaviour:
   _rb: {fileID: 2772948771194381131}
   _move: {fileID: 4748466855045646020, guid: c51616209d9b44574b68faa872d381da, type: 3}
   _jump: {fileID: 5049950431978781466, guid: c51616209d9b44574b68faa872d381da, type: 3}
+  _isGrounded: {fileID: 0}
   _speed: 5
   _jumpForce: 500
 --- !u!95 &8596109054415371662
