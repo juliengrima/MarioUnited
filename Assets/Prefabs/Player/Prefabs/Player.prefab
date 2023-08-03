@@ -326,6 +326,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _sound:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 3763119133686529893}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
