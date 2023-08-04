@@ -60,13 +60,11 @@ public class PlayerMovement : MonoBehaviour
     #endregion
     #region Methods
     void HoreizontalMouvements(float xAxis)
-    {
-       
+    {      
         _rb.velocity = new Vector2(xAxis, _rb.velocity.y);
         _animator.SetFloat("Speed", Mathf.Abs(xAxis));
         //Debug.Log($"Definition de l'axe de déplacement : {xAxis}");
-
-       
+     
     }
 
     void Jump()
