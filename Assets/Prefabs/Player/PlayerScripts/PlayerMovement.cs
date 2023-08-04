@@ -15,15 +15,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Animator _animator;
     [SerializeField] GameObject graphics;
 
-    //[SerializeField] GroundChecker _isGrounded;
-
     [Header("Animations")]
 
     [Header("Fields")]
     [SerializeField] float _speed;
     [SerializeField] float _jumpForce;
 
-    //[SerializeField] LayerMask _ground;
     bool _isButtonPressed;
     bool isGrounded;
     #endregion
@@ -52,47 +49,65 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        HoreizontalMouvements();
+        float xAxis = _move.action.ReadValue<Vector2>().x * _speed;
+        _animator.SetBool("IsJumping", false);
+        HoreizontalMouvements(xAxis);
+        Animators(xAxis);
+        UpdateRotation(xAxis);
         Jump();
         //Debug.Log($"Valeur de _isGrounded : {_isGrounded}");
     }
     #endregion
     #region Methods
-    void HoreizontalMouvements()
+    void HoreizontalMouvements(float xAxis)
     {
-        float xAxis = _move.action.ReadValue<Vector2>().x * _speed;
-        _rb.velocity = new Vector2(xAxis , _rb.velocity.y);
+       
+        _rb.velocity = new Vector2(xAxis, _rb.velocity.y);
         _animator.SetFloat("Speed", Mathf.Abs(xAxis));
-        Debug.Log($"Definition de l'axe de déplacement : {xAxis}");
+        //Debug.Log($"Definition de l'axe de déplacement : {xAxis}");
 
-        if (xAxis < 0)
-        {
-            float sprites = graphics.transform.rotation.y;
-            sprites = 180f;
-        }
+       
     }
+
     void Jump()
     {
         _isButtonPressed = _jump.action.WasPressedThisFrame();
         isGrounded = gameObject.GetComponentInChildren<GroundChecker>().IsGrounded;
         if (isGrounded)
         {
+           
             //Debug.Log("IS PRESSED");
             if (_isButtonPressed)
             {
                 _rb.AddForce(Vector2.up * _jumpForce);
                 _sound.Invoke();
+                _animator.SetBool("IsJumping", true);
             }
         }
     }
-    void FixedUpdate ()
+
+    private void Animators(float xAxis)
     {
-        
+        if (Mathf.Abs(xAxis) > 0.1f)
+        {
+            _animator.SetBool("IsRunning", true);
+        }
+        else
+        {
+            _animator.SetBool("IsRunning", false);
+        }
     }
-    void LateUpdate ()
+
+    private void UpdateRotation(float xAxis)
     {
-        
+        if (xAxis > 0)
+        {
+            graphics.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (xAxis < 0)
+        {
+            graphics.transform.rotation = Quaternion.Euler(0, 180, 0);
+        }  
     }
     #endregion
     #region Coroutines
