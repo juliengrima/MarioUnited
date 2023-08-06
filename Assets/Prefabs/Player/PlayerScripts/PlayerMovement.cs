@@ -70,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         _isButtonPressed = _jump.action.WasPressedThisFrame();
+        //_isButtonPressed = _jump.action.IsPressed();
         isGrounded = gameObject.GetComponentInChildren<GroundChecker>().IsGrounded;
         if (isGrounded)
         {
