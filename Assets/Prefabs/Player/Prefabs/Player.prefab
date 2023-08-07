@@ -127,7 +127,7 @@ MonoBehaviour:
   _animator: {fileID: 4437523681687659542}
   graphics: {fileID: 8535720270507021276}
   _speed: 6
-  _jumpForce: 10
+  _jumpForce: 400
 --- !u!1 &193441230208408155
 GameObject:
   m_ObjectHideFlags: 0
