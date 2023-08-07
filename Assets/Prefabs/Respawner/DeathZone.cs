@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DeathZone : MonoBehaviour
 {
     #region Champs
     [SerializeField] GameObject _player;
+    [SerializeField] GameObject _respawn;
+    [SerializeField] UnityEvent _graphics;
+    [SerializeField] int _blinking;
     private Vector3 position;
     #endregion
     #region Unity LifeCycle
@@ -32,7 +36,13 @@ public class DeathZone : MonoBehaviour
         if (isPlayer)
         {
             _player.SetActive(false);
-            _player.transform.position = transform.position.Set(90, 1, 0);
+            _player.transform.position = _respawn.transform.position;
+
+            if (_player == false)
+            {
+                //_graphics.Invoke();
+            }
+            _player.SetActive(true);
         }
     }
     //void FixedUpdate ()
