@@ -21,6 +21,8 @@ public class Beer : MonoBehaviour
         if (collision.attachedRigidbody.gameObject.CompareTag("Player"))
         {
             _onPick.Invoke();
+            //Envoi des points vers le GameManager
+            ScoreManager.Instance.AddScore(_points);
         }
     }
     #endregion
