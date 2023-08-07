@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 6313855857083564546}
   - component: {fileID: 3763119133686529893}
   m_Layer: 10
-  m_Name: Square
+  m_Name: GroundChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -338,7 +338,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isGrounded: 0
-  _isGroundedNumber: 0
   _effect:
     m_PersistentCalls:
       m_Calls:

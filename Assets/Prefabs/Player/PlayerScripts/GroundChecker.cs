@@ -7,17 +7,13 @@ public class GroundChecker : MonoBehaviour
 {
     #region Champs
     [SerializeField] bool _isGrounded;
-    [SerializeField] int _isGroundedNumber;
     [SerializeField] UnityEvent _effect;
     [SerializeField] UnityEvent _sound;
 
+    int _isGroundedNumber;
     public bool IsGrounded { get => _isGrounded; }
     #endregion
     #region Unity LifeCycle
-    private void Start()
-    {
-       
-    }
     #endregion
     #region Methods
     private void OnTriggerEnter2D(Collider2D collision)

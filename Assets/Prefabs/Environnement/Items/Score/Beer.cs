@@ -9,7 +9,6 @@ public class Beer : MonoBehaviour
     [SerializeField] int _points;
     [SerializeField] UnityEvent _onPick;
 
-    public int Points { get => _points; }
     #endregion
     #region Unity LifeCycle
     

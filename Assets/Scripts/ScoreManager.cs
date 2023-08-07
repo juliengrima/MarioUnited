@@ -16,16 +16,6 @@ public class ScoreManager : MonoBehaviour
     {
         Instance = this;
     }
-    //void Start()
-    //{
-
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
     #endregion
     #region Methods
     internal void AddScore(int amount)
@@ -41,14 +31,6 @@ public class ScoreManager : MonoBehaviour
 
         //Debug.Log($" PlayerDeath count : {_score}");
     }
-    //void FixedUpdate ()
-    //{
-
-    //}
-    //void LateUpdate ()
-    //{
-
-    //}
     #endregion
     #region Coroutines
     #endregion

@@ -8,26 +8,11 @@ public class DeathZone : MonoBehaviour
     #region Champs
     [SerializeField] GameObject _player;
     [SerializeField] GameObject _respawn;
-    [SerializeField] UnityEvent _graphics;
+    [SerializeField] UnityEvent _playerGraphics;
     [SerializeField] int _blinking;
     private Vector3 position;
     #endregion
     #region Unity LifeCycle
-    // Start is called before the first frame update
-    //void Awake()
-    //{
-
-    //}
-    //void Start()
-    //{
-
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
     #endregion
     #region Methods
     private void OnTriggerEnter2D(Collider2D collision)
@@ -40,19 +25,11 @@ public class DeathZone : MonoBehaviour
 
             if (_player == false)
             {
-                //_graphics.Invoke();
+                _playerGraphics.Invoke();
             }
             _player.SetActive(true);
         }
     }
-    //void FixedUpdate ()
-    //{
-
-    //}
-    //void LateUpdate ()
-    //{
-
-    //}
     #endregion
     #region Coroutines
     #endregion
