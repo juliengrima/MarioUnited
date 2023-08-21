@@ -8,6 +8,8 @@ TagManager:
   - FxTemporaire
   - PlayerRenderer
   - PointsItems
+  - Life
+  - FallingPlateforme
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - Plateform
   - 
   - 
   - Player
