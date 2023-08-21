@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] InputActionReference _move;
     [SerializeField] InputActionReference _jump;
+    [SerializeField] InputActionReference _shoot;
     [SerializeField] UnityEvent _sound;
     [SerializeField] Animator _animator;
     [SerializeField] GameObject graphics;
@@ -73,6 +74,18 @@ public class PlayerMovement : MonoBehaviour
                 _animator.SetBool("IsJumping", true);
             }
         }
+    }
+    void Shoot()
+    {
+        _isButtonPressed = _shoot.action.WasPressedThisFrame();
+        //Debug.Log("IS PRESSED");
+        if (_isButtonPressed)
+        {
+            //_rb.AddForce(Vector2.up * _jumpForce);
+            _sound.Invoke();
+            _animator.SetBool("IsShooting", true);
+        }
+        
     }
 
     private void Animators(float xAxis)

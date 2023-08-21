@@ -130,7 +130,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: feec2e4e213314c4699cae2236e81b76, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 76e2a8694d775481a807598a9a71e392, type: 3}
   m_Color: {r: 0.8207547, g: 0.770756, b: 0.3445621, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -150,13 +150,13 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2700323731604412804}
   m_BodyType: 0
-  m_Simulated: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -223,7 +223,6 @@ GameObject:
   m_Component:
   - component: {fileID: 79539638612698992}
   - component: {fileID: 4419808649390466714}
-  - component: {fileID: 4797023012360123714}
   - component: {fileID: 4832353657160412697}
   m_Layer: 7
   m_Name: Trigger
@@ -292,18 +291,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9589062, y: 0.6459598}
   m_EdgeRadius: 0
---- !u!114 &4797023012360123714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8953172663257218578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da4b326dd4fd44d4820373f57b8f75a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4832353657160412697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,9 +306,9 @@ MonoBehaviour:
   _invoke:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7483400077613183941}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: PlayInFixedTime
+        m_MethodName: Play
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -333,25 +320,13 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 9092521192517906235}
         m_TargetAssemblyTypeName: UnityEngine.Rigidbody2D, UnityEngine
-        m_MethodName: set_simulated
-        m_Mode: 6
+        m_MethodName: set_gravityScale
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2700323731604412804}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
